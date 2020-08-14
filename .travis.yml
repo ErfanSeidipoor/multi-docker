@@ -2,7 +2,6 @@ sudo: required
 services:
     - docker
 
-
 before_install:
     - docker build -t erfan/react-test -f ./client/Dockerfile.dev ./client
 
