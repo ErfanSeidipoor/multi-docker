@@ -9,15 +9,15 @@ script:
     - docker run erfan/react-test npm run test-ci
 
 after_success:
-    - docker build -t erfan/multi-back  ./back
-    - docker build -t erfan/multi-client  ./client 
-    - docker build -t erfan/multi-nginx  ./nginx 
-    - docker build -t erfan/multi-worker  ./worker 
+    - docker build -t erfanseidipoor/multi-back  ./back
+    - docker build -t erfanseidipoor/multi-client  ./client 
+    - docker build -t erfanseidipoor/multi-nginx  ./nginx 
+    - docker build -t erfanseidipoor/multi-worker  ./worker 
     # log in to docker cli
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
     # Take those images and push them to docker hub
-    - docker push erfan/multi-back
-    - docker push erfan/multi-client
-    - docker push erfan/multi-nginx  
-    - docker push erfan/multi-worker
+    - docker push erfanseidipoor/multi-back
+    - docker push erfanseidipoor/multi-client
+    - docker push erfanseidipoor/multi-nginx  
+    - docker push erfanseidipoor/multi-worker
 
